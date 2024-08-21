@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Asegúrate de importar Link
 import ContactCard from '../component/ContactCard';
 
 const ContactListView = () => {
@@ -24,15 +25,27 @@ const ContactListView = () => {
     };
 
     return (
-        <div className="container mt-5">
-            {contacts.map(contact => (
-                <ContactCard
-                    key={contact.id}
-                    contact={contact}
-                    onEdit={handleEdit}
-                    onDelete={handleDelete}
-                />
-            ))}
+        <div>
+            <nav className="navbar navbar-light bg-light">
+                <Link to="/">
+                   
+                </Link>
+                <div className="ml-auto">
+                    <Link to="/AddContactView">
+                        <button className="btn btn-success">Añadir nuevo contacto</button>
+                    </Link>
+                </div>
+            </nav>
+            <div className="container mt-5">
+                {contacts.map(contact => (
+                    <ContactCard
+                        key={contact.id}
+                        contact={contact}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
