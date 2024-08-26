@@ -96,7 +96,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
                     });
                     if (res.ok) {
-                        getActions().cargarContactos();
+                        cargarContactos();getActions().
                     } else {
                         console.error("Editado exitosamente!");
                     }
